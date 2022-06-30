@@ -45,6 +45,9 @@ function dayforecast(city) {
                 .then(response => response.json())
                 .then(function(response) {
 
+                    $("#citytitle").addClass("bg-warning")
+                    $("#dayweather").addClass("bg-warning")
+
                     var temp = response.current.temp;
                     console.log(temp);
                     var humidity = response.current.humidity;
@@ -52,7 +55,7 @@ function dayforecast(city) {
                     var uvindex = response.current.uvi;
 
                     var CityTitle = $("#citytitle");
-                    var date = moment().format("M/D/YYYY");
+                    var date = moment().format("MM/DD/YYYY");
                     CityTitle.text(cityname+" "+date);
 
                     var daytemperature = $("#daytemperature");
@@ -60,11 +63,62 @@ function dayforecast(city) {
                     var daywindspeed = $("#daywindspeed");
                     var dayuvindex = $("#dayuvindex");
 
-                    daytemperature.text(temp+" and");
-                    dayhumidity.text(humidity+" ");
-                    daywindspeed.text(windspeed+" ");
-                    dayuvindex.text(uvindex);
+                    daytemperature.text(" Temperature: "+temp);
+                    dayhumidity.text(" Humidity: "+humidity);
+                    daywindspeed.text(" Windspeed: "+windspeed);
+                    dayuvindex.text(" UV Index: "+uvindex);
 
+
+
+                    //var fdate = moment().add(1, "day").format("MM/DD/YYYY");
+                    //var ftemp = response.daily[1].temp.day;
+                    //var fwind = response.daily[1].wind_speed;
+                    //var fhumid = response.daily[1].humidity;
+
+                    //var f1date = $("#futuredate1");
+                    //var f1temp = $("#futuretemp1");
+                    //var f1wind = $("#futurewind1");
+                    //var f1humid = $("#futurehumidity1");
+
+                    //f1date.text(fdate);
+                    //f1temp.text(ftemp);
+                    //f1wind.text(fwind);
+                    //f1humid.text(fhumid);
+
+
+                    //var fdate = moment().add(2, "day").format("MM/DD/YYYY");
+                    //var ftemp = response.daily[2].temp.day;
+                    //var fwind = response.daily[2].wind_speed;
+                    //var fhumid = response.daily[2].humidity;
+
+                    //var f2date = $("#futuredate2");
+                    //var f2temp = $("#futuretemp2");
+                    //var f2wind = $("#futurewind2");
+                    //var f2humid = $("#futurehumidity2");
+
+                    //f2date.text(fdate);
+                    //f2temp.text(ftemp);
+                    //f2wind.text(fwind);
+                    //f2humid.text(fhumid);
+
+                    for (let i = 1; i < 6; i++) {
+                        
+                        var fdate = moment().add(i, "day").format("MM/DD/YYYY");
+                        var ftemp = response.daily[i].temp.day;
+                        var fwind = response.daily[i].wind_speed;
+                        var fhumid = response.daily[i].humidity;
+
+                        var f1date = $("#futuredate"+i);
+                        var f1temp = $("#futuretemp"+i);
+                        var f1wind = $("#futurewind"+i);
+                        var f1humid = $("#futurehumidity"+i);
+
+                        f1date.text(fdate);
+                        f1temp.text("Temp: "+ftemp);
+                        f1wind.text("Wind: "+fwind);
+                        f1humid.text("Humidity: "+fhumid);
+                        
+                    }
 
 
                 });

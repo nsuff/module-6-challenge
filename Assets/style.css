@@ -3,15 +3,32 @@
   font-size: 28px;
 }
 
+/*
+.backcolor {
+  
+  background-color: aqua;
+  background-size: cover;
 
-#dayweather {
-  border-style: solid;
-  border-color: lightcyan;
-  margin: 0;
-  padding: 0;
 }
 
+.tbackcolor {
+  
+  background-color: aqua;
+  background-size: cover;
+
+}
+*/
 .secondcol {
-  margin: 0;
+  
   min-height: 400px;
+}
+
+.stats {
+  margin: auto;
+  min-width: 30px;
+  position: relative;
+}
+
+.minheight {
+  min-height: auto;
 }

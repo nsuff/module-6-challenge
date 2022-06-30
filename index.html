@@ -16,7 +16,7 @@
       Weather Dashboard
     </div>
     <div class="container-fluid">
-      <div class="row">
+      <div class="row minheight">
         <div class="col-sm-5 mt-0">  
           <form id="searchform">
             <div class="row heading mt-2 pt-0 mb-2">
@@ -26,7 +26,7 @@
               <div class="col-sm-4">
                 <input type="text" id="searchedcity" class="searchedcity rounded form-control-lg">
               </div>
-              <div class="col-sm-1 mx-auto">
+              <div class="col-sm-1">
                 <button type="submit" class="btn border border-secondary">Search</button>
               </div>
             </div>
@@ -38,23 +38,69 @@
         
         
         
-        <div class="col-sm-7 secondcol row">
+        <div class="col-sm-7 secondcol row minheight">
         
-          <div id="dayweather row">
+          <div id="dayweather" class="ml-0 pl-0 dayweather rounded"><span class="dayweather">
 
-            <div class="daytitle row">
-              <h1 id="citytitle" class="citytitle"></h1>
+            <div class="daytitle row text-center rounded">
+              <h1 id="citytitle" class="citytitle text-center bg-warning rounded"></h1>
             </div>
-            <div class="row">
-              <p id="daytemperature" class="daytemperature"></p>
-              <p id="dayhumidity" class="dayhumidity"></p>
-              <p id="daywindspeed" class="daywindspeed"></p>
-              <p id="dayuvindex" class="dayuvindex"></p>
+            <div class="stats row minheight">
+              <div class="row minheight d-inline-block col-sm-12 backcolor">
+                <p id="daytemperature" class="daytemperature bg-warning"></p>
+              </div>
+              <div class="row minheight d-inline-block col-sm-12 backcolor">
+                <p id="dayhumidity" class="dayhumidity"></p>
+              </div>
+              <div class="row minheight col-sm-12 backcolor">
+                <p id="daywindspeed" class="daywindspeed"></p>
+              </div>
+              <div class="row minheigh col-sm-12 backcolor">
+                <p id="dayuvindex" class="dayuvindex"></p>
+              </div>
             </div>
-          </div>
+          </span></div>
 
-          <div class="row futureweather">
-            <h2 class="futureweathertitle"></h2>
+          <div class="row futureweather col-sm-12">
+            <div class="d-flex">
+              <div class="bg-danger text-white rounded m-2">
+                <p id="futuredate1"></p>
+                <p id="futuretemp1"></p>
+                <p id="futurewind1"></p>
+                <p id="futurehumidity1"></p>
+              </div>
+              <div class="bg-danger text-white rounded m-2">
+                <p id="futuredate2"></p>
+                <p id="futuretemp2"></p>
+                <p id="futurewind2"></p>
+                <p id="futurehumidity2"></p>
+              </div>
+              <div class="bg-danger text-white rounded m-2">
+                <p id="futuredate3"></p>
+                <p id="futuretemp3"></p>
+                <p id="futurewind3"></p>
+                <p id="futurehumidity3"></p>
+              </div>
+              <div class="bg-danger text-white rounded m-2">
+                <p id="futuredate4"></p>
+                <p id="futuretemp4"></p>
+                <p id="futurewind4"></p>
+                <p id="futurehumidity4"></p>
+              </div>
+              <div class="bg-danger text-white rounded m-2">
+                <p id="futuredate5"></p>
+                <p id="futuretemp5"></p>
+                <p id="futurewind5"></p>
+                <p id="futurehumidity5"></p>
+              </div>
+
+
+
+
+
+
+
+            </div>
 
 
 
